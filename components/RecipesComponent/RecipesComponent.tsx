@@ -16,9 +16,9 @@ import {
 } from "@chakra-ui/react"
 
 
-export default function RecipesComponent(props: RecipesComponentProps) {
+export default function RecipesComponent(props: any) {
 
-  const [recipes, setRecipes] = useState<RecipeInterface[]>([]);
+  const [recipes, setRecipes] = useState<RecipeInterface>();
   const [loading, setLoading] = useState<Boolean>(false);
 
   const [show, setShow] = useState<number>(0);
@@ -28,7 +28,7 @@ export default function RecipesComponent(props: RecipesComponentProps) {
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
-      setRecipes(props.recipes)
+      setRecipes(props!.recipes)
       setLoading(false);
     }, 1000)
   }, [props])
@@ -36,12 +36,12 @@ export default function RecipesComponent(props: RecipesComponentProps) {
     <Box d="flex" justifyContent="center" p={2}>
       {
         loading ? (<Spinner textAlign="center" size="xl" />) :
-          !recipes.results?.length ? (
+          !recipes?.results?.length ? (
             <Box>There are no recipes available yet.</Box>
           ) :
             (
               <Box d="flex" justifyContent={{ base: "center", md: "flex-start" }} alignItems="flex-start" flexWrap="wrap">
-                {recipes.results?.map((recipe: Recipe) => (
+                {recipes?.results?.map((recipe: Recipe) => (
                   <Box className={styles.foodCard} key={recipe.id} m={{ base: "5px 0", md: "5px" }} maxW={{ base: "", md: "345px" }} flex={{ base: "1 1 auto", md: "" }} textAlign="center" borderWidth="1px" borderRadius="lg" overflow="hidden">
                     <Image m="10px auto" borderRadius="lg" src={recipe.image} alt="recipe_image" />
                     <Box p="6">

@@ -10,7 +10,7 @@ import { Box } from "@chakra-ui/react"
 
 export default function MainScreen() {
   const [query, setQuery] = useState<string>('');
-  const [recipes, setRecipes] = useState<RecipeInterface[]>([]);
+  const [recipes, setRecipes] = useState<RecipeInterface | {}>({});
 
   Emitter.on('FORM-SUBMITTED', ({ query }) => {
     setQuery(query);
