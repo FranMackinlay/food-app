@@ -70,7 +70,7 @@ export default function FormComponent() {
 
   return (
     <div>
-      <Box bg="whitesmoke" w={{ base: "80%", md: "50%" }} m={{ base: "50px auto" }} py={4} px={2} color="black" borderRadius=".5em">
+      <Box bg="whitesmoke" w={{ base: "", md: "50%" }} m={{ base: "50px 10px", md: "50px auto" }} py={4} px={2} color="black" borderRadius=".5em">
         <Formik initialValues={{ query: '' }} onSubmit={onFormikSubmit}>
           <Form className={styles.formikForm}>
             <Field id="query" name="query" placeholder="Pasta">
