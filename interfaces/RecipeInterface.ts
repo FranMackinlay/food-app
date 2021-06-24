@@ -1,4 +1,4 @@
-export default interface RootObject {
+export default interface RecipeInterface {
   results: Recipe[];
   offset: number;
   number: number;
