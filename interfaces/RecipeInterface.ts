@@ -1,5 +1,5 @@
 export default interface RootObject {
-  results: Result[];
+  results: Recipe[];
   offset: number;
   number: number;
   totalResults: number;
@@ -33,7 +33,7 @@ interface Nutrition {
   nutrients: Nutrient[];
 }
 
-interface Result {
+export interface Recipe {
   id: number;
   usedIngredientCount: number;
   missedIngredientCount: number;
