@@ -16,10 +16,10 @@ export default function RecipesComponent(props: RecipesComponentProps) {
     setRecipes(props.recipes)
   }, [props])
   return (
-    <Box d="flex" justifyContent="space-betweet" alignItems="center">
+    <Box d="flex" justifyContent="flex-start" alignItems="center" flexWrap="wrap" px={5}>
       {recipes.results?.map((recipe: Recipe) => (
-        <Box key={recipe.id} flexBasis="25%" maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
-          <Image src={recipe.image} alt="recipe_image" />
+        <Box key={recipe.id} maxW="sm" m={4} textAlign="center" flex="1 1 auto" borderWidth="1px" borderRadius="lg" overflow="hidden">
+          <Image w="100%" src={recipe.image} alt="recipe_image" />
 
           <Box p="6">
             <Box
