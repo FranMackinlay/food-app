@@ -1,10 +1,10 @@
 import axios from 'axios';
-import QueryInterface from '../interfaces/QueryInterface';
 
-const API_URL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.API_KEY}&illIngredients=true`;
+// const API_URL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.apiKey}&illIngredients=true`;
+const API_URL = `https://api.spoonacular.com/recipes/complexSearch?apiKey=c0d6985c8fa247ea9dca496cb71c5d9d&fillIngredients=true`;
 
 const FoodSrv = {
-  getRecipe: async (query: QueryInterface) => {
+  getRecipe: async (query: string) => {
     const { data } = await axios({
       method: 'get',
       url: `${API_URL}&query=${query}`,
