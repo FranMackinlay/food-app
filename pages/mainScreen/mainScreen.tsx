@@ -5,6 +5,7 @@ import QueryInterface from '../../interfaces/QueryInterface';
 import RecipeInterface from '../../interfaces/RecipeInterface';
 import Emitter from '../../services/EventEmitterSrv';
 import FoodSrv from '../../services/FoodSrv';
+import { Box } from "@chakra-ui/react"
 
 
 export default function MainScreen() {
@@ -26,6 +27,9 @@ export default function MainScreen() {
 
   return (
     <div>
+      <Box mt={5} textAlign="center" fontWeight="semibold" as="h1" lineHeight="tight">
+        Welcome to the <span style={{ color: '#319795' }}>Food App</span>
+      </Box>
       <FormComponent></FormComponent>
       <RecipesComponent recipes={recipes}></RecipesComponent>
     </div>
