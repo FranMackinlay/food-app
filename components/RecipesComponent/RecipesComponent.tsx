@@ -61,7 +61,7 @@ export default function RecipesComponent(props: RecipesComponentProps) {
                       </Box>
                       <Collapse startingHeight={20} in={show === recipe.id}>
                         <List spacing={3}>
-                          {recipe.missedIngredients.map((ingredient, index) => (
+                          {recipe.missedIngredients?.map((ingredient, index) => (
                             <ListItem key={index} className={styles.ingredient}>
                               <ListIcon as={MdCheckCircle} color="green.500" />
                               {ingredient.name}
